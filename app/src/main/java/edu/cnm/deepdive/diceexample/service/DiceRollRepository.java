@@ -1,5 +1,7 @@
 package edu.cnm.deepdive.diceexample.service;
 
+import edu.cnm.deepdive.diceexample.model.Roll;
+import io.reactivex.rxjava3.core.Single;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class DiceRollRepository {
@@ -10,4 +12,5 @@ public class DiceRollRepository {
     return proxy.rollDice(numberOfDice, numberOfSides)
         .subscribeOn(Schedulers.io());
   }
+
 }

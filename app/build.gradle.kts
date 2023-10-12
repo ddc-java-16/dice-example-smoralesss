@@ -14,13 +14,16 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        resValue("string", "base_url", "https://www.dejete.com/" )
+        resValue("string", "base_url", "https://www.dejete.com/")
     }
 
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                    getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -44,11 +47,10 @@ dependencies {
     implementation("io.reactivex.rxjava3:rxjava:3.1.8")
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
 
+    runtimeOnly("androidx.lifecycle:lifecycle-livedata:2.6.2")
+    runtimeOnly("androidx.lifecycle:lifecycle-viewmodel:2.6.2")
+
     runtimeOnly("androidx.lifecycle:lifecycle-runtime:2.6.2")
-    runtimeOnly ("androidx.lifecycle:lifecycle-livedata:2.6.2")
-    runtimeOnly ("androidx.lifecycle:lifecycle-viewmodel:2.6.2")
-
-
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
